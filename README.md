@@ -50,3 +50,9 @@ to fix the code style run next command into container
 
 ```bash
 $ composer cs-fix
+```
+##  Tests
+
+```bash
+./bin/phpunit
+```

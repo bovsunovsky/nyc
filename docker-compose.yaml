@@ -11,7 +11,7 @@ services:
     depends_on:
       - mysql
     environment:
-      PHP_IDE_CONFIG: "serverName=xdebug-nyc"
+      PHP_IDE_CONFIG: "serverName=xdebug-app"
       XDEBUG_CONFIG: "remote_host=192.168.0.108"
   nginx:
     image: nginx:1.19

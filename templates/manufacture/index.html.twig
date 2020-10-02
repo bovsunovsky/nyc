@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+{% block styles %}
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+{% endblock %}
+
+{% block body %}
+    <h2> Все производители </h2>
+    <a class="btn btn-primary" href="{{ path('app_create_manufacture') }}">Добавить производителя</a>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Название фирмы</th>
+            <th>Редактировать/Удалить</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for manufacture in manufactureList %}
+            <tr>
+                <td>{{ manufacture.id }}</td>
+                <td>{{ manufacture.name }}</td>
+
+                <td>
+                    <a href="{{ path('app_update_manufacture', {'id': manufacture.id}) }}"><img src="/img/edit.png"></a>
+                    <a href="{{path('app_delete_manufacture', {'id': manufacture.id})}}"><img src="/img/delete.png"></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
