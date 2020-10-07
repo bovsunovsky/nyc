@@ -1,3 +1,31 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+app_manufacture:
+    path: /manufacture/index
+    controller: App\Modules\Manufacture\Controller\ManufactureController::index
+
+app_create_manufacture:
+    path: /manufacture/create
+    controller: App\Modules\Manufacture\Controller\ManufactureController::create
+
+app_update_manufacture:
+  path: /manufacture/update/{id}
+  controller: App\Modules\Manufacture\Controller\ManufactureController::update
+
+app_delete_manufacture:
+  path: /manufacture/delete/{id}
+  controller: App\Modules\Manufacture\Controller\ManufactureController::delete
+
+app_category:
+  path: /category/index
+  controller: App\Modules\Category\Controller\CategoryController::index
+
+app_create_category:
+  path: /category/create
+  controller: App\Modules\Category\Controller\CategoryController::create
+
+app_update_category:
+  path: /category/update/{id}
+  controller: App\Modules\Category\Controller\CategoryController::update
+
+app_delete_category:
+  path: /category/delete/{id}
+  controller: App\Modules\Category\Controller\CategoryController::delete

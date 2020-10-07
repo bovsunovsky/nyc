@@ -9,12 +9,8 @@ use App\Modules\Manufacture\Service\ManufactureProvider;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
-/**
- * @Route("/manufacture")
- */
 final class ManufactureController extends AbstractController
 {
     private ManufactureProvider $manufactureProvider;
@@ -24,9 +20,6 @@ final class ManufactureController extends AbstractController
         $this->manufactureProvider = $manufactureProvider;
     }
 
-    /**
-     * @Route("/index", name="app_manufacture")
-     */
     public function index(): Response
     {
         $manufacturerList = $this->manufactureProvider->getList();
@@ -36,9 +29,6 @@ final class ManufactureController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/create", name="app_create_manufacture", methods={"GET", "POST"})
-     */
     public function create(Request $request, ValidatorInterface $validator): Response
     {
         $form = $this->createForm(ManufactureType::class, null, [
@@ -65,9 +55,6 @@ final class ManufactureController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/update/{id}", name="app_update_manufacture", methods={"GET", "POST"})
-     */
     public function update(Request $request, int $id): Response
     {
         $manufacture = $this->manufactureProvider->getById($id);
@@ -96,9 +83,6 @@ final class ManufactureController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/delete/{id}", name="app_delete_manufacture", methods={"GET"})
-     */
     public function delete(Request $request, int $id): Response
     {
         $this->manufactureProvider->delete($id);

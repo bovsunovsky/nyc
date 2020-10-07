@@ -1,7 +1,3 @@
-controllers:
-    resource: ../../src/Modules/Manufacture/Controller/
-    type: annotation
-
 kernel:
     resource: ../../src/Kernel.php
     type: annotation

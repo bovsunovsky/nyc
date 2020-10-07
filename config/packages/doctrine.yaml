@@ -16,6 +16,12 @@ doctrine:
                 dir: '%kernel.project_dir%/src/Modules/Manufacture/Entity'
                 prefix: 'App\Modules\Manufacture\Entity'
                 alias: Manufacture
+            Category:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/src/Modules/Category/Entity'
+                prefix: 'App\Modules\Category\Entity'
+                alias: Category
 
 #            App:
 #                is_bundle: false

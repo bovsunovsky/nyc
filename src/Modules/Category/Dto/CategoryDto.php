@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Modules\Manufacture\Dto;
+namespace App\Modules\Category\Dto;
 
 use Symfony\Component\Validator\Constraints as Assert;
 
-class ManufactureDto
+class CategoryDto
 {
     private int $id;
 
